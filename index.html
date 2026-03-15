@@ -4,28 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do App</title>
+    <title>Список покупок</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+
+    <!-- Главный контейнер приложения -->
     <div class="container">
+
+        <!-- Главный контейнер приложения -->
         <header>
-            <h1>Список покупок</h1>
+            <h2>Список покупок</h2>
         </header>
         <main>
-            <div id="todo-form">
-                <input id="todo-input" type="text" placeholder="что надо купить?">
-                <div class="buttons">
-                    <button id="add-btn" type="button">+ ДОБАВИТЬ</button>
-                    <button id="clear-btn" type="button">ОЧИСТИТЬ</button>
-                </div>
+
+            <!--
+                Панель управления списком:
+                - фильтрация задач
+                - очистка списка
+                Кнопки используются JS для переключения фильтров
+            -->
+            <div id="filters" class="filters">
+                <button id="filter-all" type="button">ВСЕ</button>
+                <button id="filter-active" type="button">КУПИТЬ</button>
+                <button id="filter-completed" type="button">КУПЛЕНО</button>
+
+                <!-- Кнопка полностью очищает список -->
+                <button id="clear-btn" type="button">ОЧИСТИТЬ</button>
             </div>
+
+            <!-- Кнопка полностью очищает список -->
+            <div id="todo-form">
+
+                <!--
+                Форма добавления новой покупки.
+                JS читает значение input и создаёт новый элемент списка
+                -->
+                <label for="todo-input"
+                    style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; border: 0;">Что
+                    надо купить?</label>
+
+                <!-- Поле ввода новой покупки -->
+                <input id="todo-input" type="text" placeholder="что надо купить?">
+
+                <!-- Поле ввода новой покупки -->
+                <button id="add-btn" type="button">+ ДОБАВИТЬ</button>
+
+            </div>
+
+            <!-- Кнопка добавляет новый элемент списка через JS -->
             <ul id="todo-list">
                 <!-- задачи будут добавляться через JS -->
             </ul>
         </main>
     </div>
+
+    <!-- Основная логика приложения -->
     <script src="js/script.js"></script>
 </body>
 
